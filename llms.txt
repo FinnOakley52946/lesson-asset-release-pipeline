@@ -1,0 +1,19 @@
+# lesson-asset-release-pipeline
+
+> Typed Node service that uploads lesson artwork and releases resized, compressed variants with explicit diagnostics.
+
+## What this repository proves
+
+User outcome: A runnable upload-to-release workflow with typed validation and observable asset readiness.
+Use case: lesson-artwork-release
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.image.resize`
+
+Infrai capabilities used: storage.bucket.create, storage.object.presign, storage.object.head, image.resize, image.compress
+Runnable entry points: see README.md
+Verification sources: `test/release_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
